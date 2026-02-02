@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Fast, reliable video and audio downloader. Download videos in 1080p, 720p, 360p and audio in premium quality from any URL." />
+    <meta name="keywords" content="video downloader, audio downloader, mp4 downloader, mp3 converter, video to audio" />
+    <meta name="author" content="Video Downloader" />
+    <meta property="og:title" content="Video & Audio Downloader - Download from Any URL" />
+    <meta property="og:description" content="Convert and download videos and audio with high quality from any source." />
+    <meta property="og:type" content="website" />
+    <title>Video & Audio Downloader - Download Videos & Music Online</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <header class="header">
+        <div class="container">
+          <h1 class="logo">🎥 DownloadHub</h1>
+          <p class="tagline">Fast & Reliable Video & Audio Downloader</p>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="container">
+        <section class="hero">
+          <h2>Download Videos & Audio Instantly</h2>
+          <p>Get your favorite content in multiple formats and qualities</p>
+        </section>
+
+        <!-- Form Section -->
+        <section class="form-section">
+          <form id="downloadForm" class="form-card">
+            <div class="form-group">
+              <label for="url" class="form-label">📍 Video/Audio URL</label>
+              <input
+                id="url"
+                type="url"
+                required
+                placeholder="Paste URL here (https://...)"
+                class="form-input"
+                autocomplete="off"
+              />
+              <small class="form-hint">Works with YouTube, Instagram, TikTok, and more</small>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="media_type" class="form-label">📺 Type</label>
+                <select id="media_type" class="form-select">
+                  <option value="video">🎬 Video</option>
+                  <option value="audio">🎵 Audio</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label id="qualityLabel" for="quality" class="form-label">⚙️ Quality</label>
+                <select id="quality" class="form-select">
+                  <option value="1080p">📺 1080p</option>
+                  <option value="720p">📺 720p</option>
+                  <option value="360p">📺 360p</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              <span class="btn-text">Download</span>
+              <span class="btn-icon">⬇️</span>
+            </button>
+          </form>
+        </section>
+
+        <!-- Status Section -->
+        <section id="statusSection" class="status-section" style="display: none">
+          <div class="status-card">
+            <h3>Download Status</h3>
+            <div id="status" class="status-content"></div>
+          </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+          <h3>Why Choose Us?</h3>
+          <div class="features-grid">
+            <div class="feature">
+              <span class="feature-icon">⚡</span>
+              <h4>Fast Downloads</h4>
+              <p>High-speed downloading with optimized performance</p>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">🎯</span>
+              <h4>Multiple Formats</h4>
+              <p>Choose from various quality options for videos and audio</p>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">🔒</span>
+              <h4>Secure & Private</h4>
+              <p>Your downloads are private and handled securely</p>
+            </div>
+            <div class="feature">
+              <span class="feature-icon">🌐</span>
+              <h4>Works Everywhere</h4>
+              <p>Download from any website with video or audio content</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <p>&copy; 2026 DownloadHub. All rights reserved. | <a href="#privacy">Privacy</a> | <a href="#terms">Terms</a></p>
+        </div>
+      </footer>
+    </div>
+
+    <script src="/env.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>
+

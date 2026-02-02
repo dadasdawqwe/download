@@ -1,0 +1,20 @@
+# Netlify configuration for Video Downloader frontend
+
+[build]
+  publish = "frontend"
+  # Generate a small env.js at build time so runtime can read VITE_API_URL
+  command = "bash -lc \"echo \"window.__API_URL__='${VITE_API_URL:-http://localhost:8000}'\" > frontend/env.js\""
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production.environment]
+  # Set your backend API URL here (e.g., if you have an existing backend service)
+  VITE_API_URL = "https://your-backend-api-url.com"
+
+[context.branch-deploy.environment]
+  # Local development
+  VITE_API_URL = "http://localhost:8000"
+
