@@ -2,19 +2,22 @@ import os
 import uuid
 import threading
 import subprocess
+import shutil
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from app.schemas import DownloadRequest
-from yt_dlp import YoutubeDL
+# yt_dlp is imported lazily inside the worker so the API can start
+# without yt-dlp installed (useful for quick checks and CI).
 from urllib.parse import urlparse
 
 app = FastAPI(title="Video/Audio Downloader", description="Download videos and audio from any URL with quality selection")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
 
-# Use a writable temp directory by default for container friendliness
-DOWNLOAD_DIR = os.getenv('DOWNLOAD_DIR', '/tmp/downloads')
+# Use project-level `downloads/` by default so tests and local runs find files
+DEFAULT_DOWNLOADS = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', 'downloads'))
+DOWNLOAD_DIR = os.getenv('DOWNLOAD_DIR', DEFAULT_DOWNLOADS)
 if not os.path.isabs(DOWNLOAD_DIR):
     DOWNLOAD_DIR = os.path.abspath(DOWNLOAD_DIR)
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
@@ -38,11 +41,14 @@ def validate_url(url: str) -> bool:
 def download_worker(task_id, url, media_type, quality):
     """Download video/audio with correct format selection"""
     try:
+        # Lazy import to avoid failing server startup if yt-dlp isn't installed.
+        from yt_dlp import YoutubeDL
         with tasks_lock:
             tasks[task_id]['state'] = 'DOWNLOADING'
         
+        # Prefix output filenames with the `task_id` so files are unique per request
         ydl_opts = {
-            'outtmpl': os.path.join(DOWNLOAD_DIR, '%(id)s_%(height)sp.%(ext)s') if media_type == 'video' else os.path.join(DOWNLOAD_DIR, '%(id)s.%(ext)s'),
+            'outtmpl': os.path.join(DOWNLOAD_DIR, f"{task_id}_%(id)s_%(height)sp.%(ext)s") if media_type == 'video' else os.path.join(DOWNLOAD_DIR, f"{task_id}_%(id)s.%(ext)s"),
             'noplaylist': True,
             'quiet': False,
             'no_warnings': False,
@@ -77,14 +83,9 @@ def download_worker(task_id, url, media_type, quality):
                 ydl_opts['format'] = 'bestvideo[height<=720]+bestaudio/best[height<=720]'
             else:  # 360p
                 ydl_opts['format'] = 'bestvideo[height<=360]+bestaudio/best[height<=360]'
-            
-            # Merge video and audio
-            ydl_opts['postprocessors'] = [
-                {
-                    'key': 'FFmpegVideoConvertor',
-                    'preferedformat': 'mp4'
-                }
-            ]
+
+            # Ensure merged output format is MP4 (more predictable and fast merging)
+            ydl_opts['merge_output_format'] = 'mp4'
         else:
             # Audio format selection - extract and convert to MP3 with specific bitrate
             bitrate_map = {'excellent': '320', 'good': '192', 'ok': '128'}
@@ -99,21 +100,35 @@ def download_worker(task_id, url, media_type, quality):
                 }
             ]
         
+        # Use aria2c for faster segmented downloads when available
+        if shutil.which('aria2c'):
+            ydl_opts['external_downloader'] = 'aria2c'
+            ydl_opts['external_downloader_args'] = ['-x', '16', '-s', '16', '-k', '1M']
+
         # Download with yt-dlp
+        print(f"[{task_id}] Starting download: {url}")
         with YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(url, download=True)
             downloaded_file = ydl.prepare_filename(info)
+            print(f"[{task_id}] Downloaded file: {downloaded_file}")
         
         # Find the most recently created file (the actual output)
         files = [os.path.join(DOWNLOAD_DIR, f) for f in os.listdir(DOWNLOAD_DIR)
                  if os.path.isfile(os.path.join(DOWNLOAD_DIR, f)) and not f.startswith('.')]
 
+        print(f"[{task_id}] Files in download dir: {len(files)}")
         if not files:
+            print(f"[{task_id}] ERROR: No files found after download")
             with tasks_lock:
                 tasks[task_id] = {'state': 'FAILURE', 'error': 'Download completed but file not found'}
             return
 
         newest = max(files, key=os.path.getmtime)
+        print(f"[{task_id}] Most recent file: {newest}")
+        # File is already prefixed with task_id from ydl_opts template,
+        # so no need to rename it again
+        basename = os.path.basename(newest)
+
         file_size = os.path.getsize(newest)
 
         result = {
@@ -123,6 +138,44 @@ def download_worker(task_id, url, media_type, quality):
             'quality': quality,
             'type': media_type
         }
+
+        # If audio was requested at a higher bitrate than the source, re-encode
+        if media_type == 'audio':
+            try:
+                # Probe input bitrate (kbps)
+                probe_cmd = ['ffprobe', '-v', 'error', '-select_streams', 'a:0', '-show_entries', 'stream=bit_rate', '-of', 'default=noprint_wrappers=1:nokey=1', newest]
+                p = subprocess.run(probe_cmd, capture_output=True, text=True, timeout=10)
+                if p.returncode == 0 and p.stdout.strip():
+                    src_bps = int(p.stdout.strip())
+                    src_kbps = src_bps // 1000
+                else:
+                    src_kbps = None
+            except Exception:
+                src_kbps = None
+
+            bitrate_map = {'excellent': 320, 'good': 192, 'ok': 128}
+            target_kbps = bitrate_map.get(quality, None)
+
+            if target_kbps and src_kbps and src_kbps < target_kbps:
+                # Re-encode to requested bitrate (will increase file size but not quality)
+                base, ext = os.path.splitext(newest)
+                reenc_path = f"{base}_{target_kbps}kbps.mp3"
+                ff_cmd = ['ffmpeg', '-y', '-i', newest, '-b:a', f'{target_kbps}k', reenc_path]
+                try:
+                    subprocess.run(ff_cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=120)
+                    # Replace result with re-encoded file
+                    try:
+                        os.remove(newest)
+                    except Exception:
+                        pass
+                    newest = reenc_path
+                    file_size = os.path.getsize(newest)
+                    result['file_path'] = newest
+                    result['filename'] = os.path.basename(newest)
+                    result['size'] = file_size
+                except Exception:
+                    # If re-encode fails, continue with original file
+                    pass
 
         # If configured, upload to Google Cloud Storage and return a signed URL
         if STORAGE_TYPE == 'gcs' and GCS_BUCKET:
@@ -153,7 +206,12 @@ def download_worker(task_id, url, media_type, quality):
             tasks[task_id] = {'state': 'SUCCESS', 'result': result}
                 
     except Exception as e:
+        import traceback
         error_msg = str(e)
+        print(f"[{task_id}] EXCEPTION: {type(e).__name__}: {error_msg}")
+        print(f"[{task_id}] Traceback:")
+        print(traceback.format_exc())
+        
         # Provide helpful error messages
         if 'available' in error_msg.lower():
             error_msg = f"Content not available: {quality} quality may not be available for this source"
@@ -239,11 +297,29 @@ def get_file(task_id: str):
     if not path or not os.path.exists(path):
         raise HTTPException(status_code=404, detail='File missing')
 
+    # Determine correct media type based on file extension
+    media_type = 'application/octet-stream'
+    if path.endswith('.mp4'):
+        media_type = 'video/mp4'
+    elif path.endswith('.webm'):
+        media_type = 'video/webm'
+    elif path.endswith('.mkv'):
+        media_type = 'video/x-matroska'
+    elif path.endswith('.mp3'):
+        media_type = 'audio/mpeg'
+    elif path.endswith('.m4a'):
+        media_type = 'audio/mp4'
+    elif path.endswith('.wav'):
+        media_type = 'audio/wav'
+    elif path.endswith('.flac'):
+        media_type = 'audio/flac'
+
     return FileResponse(
         path,
         filename=data.get('filename'),
-        media_type='application/octet-stream'
+        media_type=media_type
     )
+
 
 @app.get("/api/formats")
 def get_formats():

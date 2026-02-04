@@ -20,7 +20,30 @@ Static frontend for downloading videos/audio from any URL with quality selection
 
 ## Local Development
 
-Open `frontend/index.html` in a browser or serve with a simple HTTP server:
+### Quick Start (Full Stack)
+
+Run the complete site locally with one command:
+
+```bash
+./start.sh
+# Server will start on http://localhost:8000
+# Open in browser and start downloading!
+```
+
+To stop the server:
+```bash
+./stop.sh
+```
+
+The `start.sh` script will:
+- Create a Python 3.11 virtualenv (`.venv311`) if needed
+- Install all backend dependencies
+- Start the FastAPI + Uvicorn server on port 8000
+- Serve the frontend at the same URL
+
+### Frontend Only
+
+If you only want the static frontend (without the backend API):
 
 ```bash
 cd frontend
@@ -28,11 +51,7 @@ python -m http.server 8001
 # Visit http://localhost:8001
 ```
 
-For local testing with a backend, set your backend API endpoint:
-```bash
-# In frontend/app.js, the API URL defaults to http://localhost:8000
-# Or configure VITE_API_URL environment variable
-```
+For local testing with a backend, the frontend automatically uses `http://localhost:8000` by default.
 
 ## Backend (Optional)
 

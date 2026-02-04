@@ -1,0 +1,165 @@
+INFO:     Started server process [13310]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:50954 - "GET /status/test HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50955 - "POST /download HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50956 - "GET /status/c38cbb2b-b0d6-4d68-bf91-c71c0a1268a9 HTTP/1.1" 200 OK
+[youtube] Extracting URL: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+[youtube] dQw4w9WgXcQ: Downloading webpage
+[youtube] dQw4w9WgXcQ: Downloading android vr player API JSON
+[youtube] dQw4w9WgXcQ: Downloading web safari player API JSON
+[youtube] dQw4w9WgXcQ: Downloading player 5d93cfdb-main
+[youtube] [jsc:deno] Solving JS challenges using deno
+WARNING: [youtube] [jsc] Remote components challenge solver script (deno) and NPM package (deno) were skipped. These may be required to solve JS challenges. You can enable these downloads with  --remote-components ejs:github  (recommended) or  --remote-components ejs:npm , respectively. For more information and alternatives, refer to  https://github.com/yt-dlp/yt-dlp/wiki/EJS
+WARNING: [youtube] dQw4w9WgXcQ: Signature solving failed: Some formats may be missing. Ensure you have a supported JavaScript runtime and challenge solver script distribution installed. Review any warnings presented before this message. For more details, refer to  https://github.com/yt-dlp/yt-dlp/wiki/EJS
+WARNING: [youtube] dQw4w9WgXcQ: n challenge solving failed: Some formats may be missing. Ensure you have a supported JavaScript runtime and challenge solver script distribution installed. Review any warnings presented before this message. For more details, refer to  https://github.com/yt-dlp/yt-dlp/wiki/EJS
+[info] dQw4w9WgXcQ: Downloading 1 format(s): 251
+[download] Destination: /Users/rajatsable/Documents/web development/video downloader/downloads/c38cbb2b-b0d6-4d68-bf91-c71c0a1268a9_dQw4w9WgXcQ.webm
+INFO:     127.0.0.1:50988 - "GET /status/c38cbb2b-b0d6-4d68-bf91-c71c0a1268a9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51011 - "GET /status/c38cbb2b-b0d6-4d68-bf91-c71c0a1268a9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51036 - "GET /status/c38cbb2b-b0d6-4d68-bf91-c71c0a1268a9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51060 - "GET /status/c38cbb2b-b0d6-4d68-bf91-c71c0a1268a9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51084 - "GET /status/c38cbb2b-b0d6-4d68-bf91-c71c0a1268a9 HTTP/1.1" 200 OK
+[download] Download completed
+[ExtractAudio] Destination: /Users/rajatsable/Documents/web development/video downloader/downloads/c38cbb2b-b0d6-4d68-bf91-c71c0a1268a9_dQw4w9WgXcQ.mp3
+INFO:     127.0.0.1:51112 - "GET /status/c38cbb2b-b0d6-4d68-bf91-c71c0a1268a9 HTTP/1.1" 200 OK
+Deleting original file /Users/rajatsable/Documents/web development/video downloader/downloads/c38cbb2b-b0d6-4d68-bf91-c71c0a1268a9_dQw4w9WgXcQ.webm (pass -k to keep)
+INFO:     127.0.0.1:51134 - "GET /status/c38cbb2b-b0d6-4d68-bf91-c71c0a1268a9 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51136 - "POST /download HTTP/1.1" 200 OK
+[youtube] Extracting URL: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+[youtube] dQw4w9WgXcQ: Downloading webpage
+INFO:     127.0.0.1:51137 - "GET /status/74eef9bd-1728-4909-8175-0df60fd90a2c HTTP/1.1" 200 OK
+[youtube] dQw4w9WgXcQ: Downloading android vr player API JSON
+[youtube] dQw4w9WgXcQ: Downloading web safari player API JSON
+[youtube] dQw4w9WgXcQ: Downloading player 5d93cfdb-main
+INFO:     127.0.0.1:51162 - "GET /status/74eef9bd-1728-4909-8175-0df60fd90a2c HTTP/1.1" 200 OK
+[youtube] [jsc:deno] Solving JS challenges using deno
+WARNING: [youtube] [jsc] Remote components challenge solver script (deno) and NPM package (deno) were skipped. These may be required to solve JS challenges. You can enable these downloads with  --remote-components ejs:github  (recommended) or  --remote-components ejs:npm , respectively. For more information and alternatives, refer to  https://github.com/yt-dlp/yt-dlp/wiki/EJS
+WARNING: [youtube] dQw4w9WgXcQ: Signature solving failed: Some formats may be missing. Ensure you have a supported JavaScript runtime and challenge solver script distribution installed. Review any warnings presented before this message. For more details, refer to  https://github.com/yt-dlp/yt-dlp/wiki/EJS
+WARNING: [youtube] dQw4w9WgXcQ: n challenge solving failed: Some formats may be missing. Ensure you have a supported JavaScript runtime and challenge solver script distribution installed. Review any warnings presented before this message. For more details, refer to  https://github.com/yt-dlp/yt-dlp/wiki/EJS
+[info] dQw4w9WgXcQ: Downloading 1 format(s): 251
+[download] Destination: /Users/rajatsable/Documents/web development/video downloader/downloads/74eef9bd-1728-4909-8175-0df60fd90a2c_dQw4w9WgXcQ.webm
+INFO:     127.0.0.1:51190 - "GET /status/74eef9bd-1728-4909-8175-0df60fd90a2c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51214 - "GET /status/74eef9bd-1728-4909-8175-0df60fd90a2c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51238 - "GET /status/74eef9bd-1728-4909-8175-0df60fd90a2c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51263 - "GET /status/74eef9bd-1728-4909-8175-0df60fd90a2c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51287 - "GET /status/74eef9bd-1728-4909-8175-0df60fd90a2c HTTP/1.1" 200 OK
+[download] Download completed
+[ExtractAudio] Destination: /Users/rajatsable/Documents/web development/video downloader/downloads/74eef9bd-1728-4909-8175-0df60fd90a2c_dQw4w9WgXcQ.mp3
+INFO:     127.0.0.1:51310 - "GET /status/74eef9bd-1728-4909-8175-0df60fd90a2c HTTP/1.1" 200 OK
+Deleting original file /Users/rajatsable/Documents/web development/video downloader/downloads/74eef9bd-1728-4909-8175-0df60fd90a2c_dQw4w9WgXcQ.webm (pass -k to keep)
+INFO:     127.0.0.1:51336 - "GET /status/74eef9bd-1728-4909-8175-0df60fd90a2c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51337 - "POST /download HTTP/1.1" 200 OK
+[youtube] Extracting URL: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+[youtube] dQw4w9WgXcQ: Downloading webpage
+INFO:     127.0.0.1:51338 - "GET /status/9990064e-27aa-4bdd-8328-b2b6bb9b5525 HTTP/1.1" 200 OK
+[youtube] dQw4w9WgXcQ: Downloading android vr player API JSON
+[youtube] dQw4w9WgXcQ: Downloading web safari player API JSON
+[youtube] dQw4w9WgXcQ: Downloading player 3510b6ff-main
+INFO:     127.0.0.1:51364 - "GET /status/9990064e-27aa-4bdd-8328-b2b6bb9b5525 HTTP/1.1" 200 OK
+[youtube] [jsc:deno] Solving JS challenges using deno
+WARNING: [youtube] [jsc] Remote components challenge solver script (deno) and NPM package (deno) were skipped. These may be required to solve JS challenges. You can enable these downloads with  --remote-components ejs:github  (recommended) or  --remote-components ejs:npm , respectively. For more information and alternatives, refer to  https://github.com/yt-dlp/yt-dlp/wiki/EJS
+WARNING: [youtube] dQw4w9WgXcQ: Signature solving failed: Some formats may be missing. Ensure you have a supported JavaScript runtime and challenge solver script distribution installed. Review any warnings presented before this message. For more details, refer to  https://github.com/yt-dlp/yt-dlp/wiki/EJS
+WARNING: [youtube] dQw4w9WgXcQ: n challenge solving failed: Some formats may be missing. Ensure you have a supported JavaScript runtime and challenge solver script distribution installed. Review any warnings presented before this message. For more details, refer to  https://github.com/yt-dlp/yt-dlp/wiki/EJS
+[info] dQw4w9WgXcQ: Downloading 1 format(s): 251
+[download] Destination: /Users/rajatsable/Documents/web development/video downloader/downloads/9990064e-27aa-4bdd-8328-b2b6bb9b5525_dQw4w9WgXcQ.webm
+INFO:     127.0.0.1:51393 - "GET /status/9990064e-27aa-4bdd-8328-b2b6bb9b5525 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51417 - "GET /status/9990064e-27aa-4bdd-8328-b2b6bb9b5525 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51439 - "GET /status/9990064e-27aa-4bdd-8328-b2b6bb9b5525 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51466 - "GET /status/9990064e-27aa-4bdd-8328-b2b6bb9b5525 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51490 - "GET /status/9990064e-27aa-4bdd-8328-b2b6bb9b5525 HTTP/1.1" 200 OK
+[download] Download completed
+[ExtractAudio] Destination: /Users/rajatsable/Documents/web development/video downloader/downloads/9990064e-27aa-4bdd-8328-b2b6bb9b5525_dQw4w9WgXcQ.mp3
+INFO:     127.0.0.1:51513 - "GET /status/9990064e-27aa-4bdd-8328-b2b6bb9b5525 HTTP/1.1" 200 OK
+Deleting original file /Users/rajatsable/Documents/web development/video downloader/downloads/9990064e-27aa-4bdd-8328-b2b6bb9b5525_dQw4w9WgXcQ.webm (pass -k to keep)
+INFO:     127.0.0.1:51538 - "GET /status/9990064e-27aa-4bdd-8328-b2b6bb9b5525 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51541 - "POST /download HTTP/1.1" 200 OK
+[youtube] Extracting URL: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+[youtube] dQw4w9WgXcQ: Downloading webpage
+INFO:     127.0.0.1:51542 - "GET /status/3ab726b2-7aa2-434c-8835-06543f21f0ad HTTP/1.1" 200 OK
+[youtube] dQw4w9WgXcQ: Downloading android vr player API JSON
+[youtube] dQw4w9WgXcQ: Downloading web safari player API JSON
+[youtube] dQw4w9WgXcQ: Downloading player 5d93cfdb-main
+[youtube] [jsc:deno] Solving JS challenges using deno
+WARNING: [youtube] [jsc] Remote components challenge solver script (deno) and NPM package (deno) were skipped. These may be required to solve JS challenges. You can enable these downloads with  --remote-components ejs:github  (recommended) or  --remote-components ejs:npm , respectively. For more information and alternatives, refer to  https://github.com/yt-dlp/yt-dlp/wiki/EJS
+WARNING: [youtube] dQw4w9WgXcQ: Signature solving failed: Some formats may be missing. Ensure you have a supported JavaScript runtime and challenge solver script distribution installed. Review any warnings presented before this message. For more details, refer to  https://github.com/yt-dlp/yt-dlp/wiki/EJS
+WARNING: [youtube] dQw4w9WgXcQ: n challenge solving failed: Some formats may be missing. Ensure you have a supported JavaScript runtime and challenge solver script distribution installed. Review any warnings presented before this message. For more details, refer to  https://github.com/yt-dlp/yt-dlp/wiki/EJS
+[info] dQw4w9WgXcQ: Downloading 1 format(s): 399+251
+[download] Destination: /Users/rajatsable/Documents/web development/video downloader/downloads/3ab726b2-7aa2-434c-8835-06543f21f0ad_dQw4w9WgXcQ_1080p.f399.mp4
+INFO:     127.0.0.1:51568 - "GET /status/3ab726b2-7aa2-434c-8835-06543f21f0ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51608 - "GET /status/3ab726b2-7aa2-434c-8835-06543f21f0ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51635 - "GET /status/3ab726b2-7aa2-434c-8835-06543f21f0ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51660 - "GET /status/3ab726b2-7aa2-434c-8835-06543f21f0ad HTTP/1.1" 200 OK
+[download] Download completed
+[download] Destination: /Users/rajatsable/Documents/web development/video downloader/downloads/3ab726b2-7aa2-434c-8835-06543f21f0ad_dQw4w9WgXcQ_1080p.f251.webm
+INFO:     127.0.0.1:51689 - "GET /status/3ab726b2-7aa2-434c-8835-06543f21f0ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51714 - "GET /status/3ab726b2-7aa2-434c-8835-06543f21f0ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51737 - "GET /status/3ab726b2-7aa2-434c-8835-06543f21f0ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51763 - "GET /status/3ab726b2-7aa2-434c-8835-06543f21f0ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51787 - "GET /status/3ab726b2-7aa2-434c-8835-06543f21f0ad HTTP/1.1" 200 OK
+[download] Download completed
+[Merger] Merging formats into "/Users/rajatsable/Documents/web development/video downloader/downloads/3ab726b2-7aa2-434c-8835-06543f21f0ad_dQw4w9WgXcQ_1080p.mp4"
+Deleting original file /Users/rajatsable/Documents/web development/video downloader/downloads/3ab726b2-7aa2-434c-8835-06543f21f0ad_dQw4w9WgXcQ_1080p.f251.webm (pass -k to keep)
+Deleting original file /Users/rajatsable/Documents/web development/video downloader/downloads/3ab726b2-7aa2-434c-8835-06543f21f0ad_dQw4w9WgXcQ_1080p.f399.mp4 (pass -k to keep)
+INFO:     127.0.0.1:51810 - "GET /status/3ab726b2-7aa2-434c-8835-06543f21f0ad HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51811 - "POST /download HTTP/1.1" 200 OK
+[youtube] Extracting URL: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+[youtube] dQw4w9WgXcQ: Downloading webpage
+INFO:     127.0.0.1:51812 - "GET /status/81d019f7-db43-4cae-882b-8f6f6e2b7cfe HTTP/1.1" 200 OK
+[youtube] dQw4w9WgXcQ: Downloading android vr player API JSON
+[youtube] dQw4w9WgXcQ: Downloading web safari player API JSON
+INFO:     127.0.0.1:51837 - "GET /status/81d019f7-db43-4cae-882b-8f6f6e2b7cfe HTTP/1.1" 200 OK
+[youtube] dQw4w9WgXcQ: Downloading player 5d93cfdb-main
+[youtube] [jsc:deno] Solving JS challenges using deno
+WARNING: [youtube] [jsc] Remote components challenge solver script (deno) and NPM package (deno) were skipped. These may be required to solve JS challenges. You can enable these downloads with  --remote-components ejs:github  (recommended) or  --remote-components ejs:npm , respectively. For more information and alternatives, refer to  https://github.com/yt-dlp/yt-dlp/wiki/EJS
+WARNING: [youtube] dQw4w9WgXcQ: Signature solving failed: Some formats may be missing. Ensure you have a supported JavaScript runtime and challenge solver script distribution installed. Review any warnings presented before this message. For more details, refer to  https://github.com/yt-dlp/yt-dlp/wiki/EJS
+WARNING: [youtube] dQw4w9WgXcQ: n challenge solving failed: Some formats may be missing. Ensure you have a supported JavaScript runtime and challenge solver script distribution installed. Review any warnings presented before this message. For more details, refer to  https://github.com/yt-dlp/yt-dlp/wiki/EJS
+[info] dQw4w9WgXcQ: Downloading 1 format(s): 398+251
+[download] Destination: /Users/rajatsable/Documents/web development/video downloader/downloads/81d019f7-db43-4cae-882b-8f6f6e2b7cfe_dQw4w9WgXcQ_720p.f398.mp4
+INFO:     127.0.0.1:51877 - "GET /status/81d019f7-db43-4cae-882b-8f6f6e2b7cfe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51902 - "GET /status/81d019f7-db43-4cae-882b-8f6f6e2b7cfe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51927 - "GET /status/81d019f7-db43-4cae-882b-8f6f6e2b7cfe HTTP/1.1" 200 OK
+[download] Download completed
+[download] Destination: /Users/rajatsable/Documents/web development/video downloader/downloads/81d019f7-db43-4cae-882b-8f6f6e2b7cfe_dQw4w9WgXcQ_720p.f251.webm
+INFO:     127.0.0.1:51956 - "GET /status/81d019f7-db43-4cae-882b-8f6f6e2b7cfe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51979 - "GET /status/81d019f7-db43-4cae-882b-8f6f6e2b7cfe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52003 - "GET /status/81d019f7-db43-4cae-882b-8f6f6e2b7cfe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52027 - "GET /status/81d019f7-db43-4cae-882b-8f6f6e2b7cfe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52052 - "GET /status/81d019f7-db43-4cae-882b-8f6f6e2b7cfe HTTP/1.1" 200 OK
+[download] Download completed
+[Merger] Merging formats into "/Users/rajatsable/Documents/web development/video downloader/downloads/81d019f7-db43-4cae-882b-8f6f6e2b7cfe_dQw4w9WgXcQ_720p.mp4"
+Deleting original file /Users/rajatsable/Documents/web development/video downloader/downloads/81d019f7-db43-4cae-882b-8f6f6e2b7cfe_dQw4w9WgXcQ_720p.f251.webm (pass -k to keep)
+Deleting original file /Users/rajatsable/Documents/web development/video downloader/downloads/81d019f7-db43-4cae-882b-8f6f6e2b7cfe_dQw4w9WgXcQ_720p.f398.mp4 (pass -k to keep)
+INFO:     127.0.0.1:52076 - "GET /status/81d019f7-db43-4cae-882b-8f6f6e2b7cfe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52078 - "POST /download HTTP/1.1" 200 OK
+[youtube] Extracting URL: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+[youtube] dQw4w9WgXcQ: Downloading webpage
+INFO:     127.0.0.1:52079 - "GET /status/dfc56156-eab1-4c66-b5b3-039f567ec8c8 HTTP/1.1" 200 OK
+[youtube] dQw4w9WgXcQ: Downloading android vr player API JSON
+[youtube] dQw4w9WgXcQ: Downloading web safari player API JSON
+[youtube] dQw4w9WgXcQ: Downloading player 5d93cfdb-main
+[youtube] [jsc:deno] Solving JS challenges using deno
+WARNING: [youtube] [jsc] Remote components challenge solver script (deno) and NPM package (deno) were skipped. These may be required to solve JS challenges. You can enable these downloads with  --remote-components ejs:github  (recommended) or  --remote-components ejs:npm , respectively. For more information and alternatives, refer to  https://github.com/yt-dlp/yt-dlp/wiki/EJS
+WARNING: [youtube] dQw4w9WgXcQ: Signature solving failed: Some formats may be missing. Ensure you have a supported JavaScript runtime and challenge solver script distribution installed. Review any warnings presented before this message. For more details, refer to  https://github.com/yt-dlp/yt-dlp/wiki/EJS
+WARNING: [youtube] dQw4w9WgXcQ: n challenge solving failed: Some formats may be missing. Ensure you have a supported JavaScript runtime and challenge solver script distribution installed. Review any warnings presented before this message. For more details, refer to  https://github.com/yt-dlp/yt-dlp/wiki/EJS
+[info] dQw4w9WgXcQ: Downloading 1 format(s): 396+251
+[download] Destination: /Users/rajatsable/Documents/web development/video downloader/downloads/dfc56156-eab1-4c66-b5b3-039f567ec8c8_dQw4w9WgXcQ_360p.f396.mp4
+INFO:     127.0.0.1:52110 - "GET /status/dfc56156-eab1-4c66-b5b3-039f567ec8c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52134 - "GET /status/dfc56156-eab1-4c66-b5b3-039f567ec8c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52159 - "GET /status/dfc56156-eab1-4c66-b5b3-039f567ec8c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52183 - "GET /status/dfc56156-eab1-4c66-b5b3-039f567ec8c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52208 - "GET /status/dfc56156-eab1-4c66-b5b3-039f567ec8c8 HTTP/1.1" 200 OK
+[download] Download completed
+[download] Destination: /Users/rajatsable/Documents/web development/video downloader/downloads/dfc56156-eab1-4c66-b5b3-039f567ec8c8_dQw4w9WgXcQ_360p.f251.webm
+INFO:     127.0.0.1:52236 - "GET /status/dfc56156-eab1-4c66-b5b3-039f567ec8c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52261 - "GET /status/dfc56156-eab1-4c66-b5b3-039f567ec8c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52286 - "GET /status/dfc56156-eab1-4c66-b5b3-039f567ec8c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52310 - "GET /status/dfc56156-eab1-4c66-b5b3-039f567ec8c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52334 - "GET /status/dfc56156-eab1-4c66-b5b3-039f567ec8c8 HTTP/1.1" 200 OK
+[download] Download completed
+[Merger] Merging formats into "/Users/rajatsable/Documents/web development/video downloader/downloads/dfc56156-eab1-4c66-b5b3-039f567ec8c8_dQw4w9WgXcQ_360p.mp4"
+Deleting original file /Users/rajatsable/Documents/web development/video downloader/downloads/dfc56156-eab1-4c66-b5b3-039f567ec8c8_dQw4w9WgXcQ_360p.f396.mp4 (pass -k to keep)
+Deleting original file /Users/rajatsable/Documents/web development/video downloader/downloads/dfc56156-eab1-4c66-b5b3-039f567ec8c8_dQw4w9WgXcQ_360p.f251.webm (pass -k to keep)
+INFO:     127.0.0.1:52359 - "GET /status/dfc56156-eab1-4c66-b5b3-039f567ec8c8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52383 - "GET /status/dfc56156-eab1-4c66-b5b3-039f567ec8c8 HTTP/1.1" 200 OK

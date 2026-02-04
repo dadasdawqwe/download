@@ -2,8 +2,9 @@
 
 [build]
   publish = "frontend"
-  # Generate a small env.js at build time so runtime can read VITE_API_URL
-  command = "bash -lc \"echo \"window.__API_URL__='${VITE_API_URL:-http://localhost:8000}'\" > frontend/env.js\""
+  # Generate a small env.js at build time so runtime can read VITE_API_URL.
+  # If VITE_API_URL is unset, write an empty string so the frontend falls back to page origin.
+  command = "bash -lc \"echo \"window.__API_URL__='${VITE_API_URL:-}'\" > frontend/env.js\""
 
 [[redirects]]
   from = "/*"

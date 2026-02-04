@@ -10,6 +10,7 @@
     <meta property="og:description" content="Convert and download videos and audio with high quality from any source." />
     <meta property="og:type" content="website" />
     <title>Video & Audio Downloader - Download Videos & Music Online</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
@@ -69,6 +70,35 @@
               <span class="btn-icon">⬇️</span>
             </button>
           </form>
+        </section>
+
+        <!-- Media Player Section -->
+        <section id="playerSection" class="player-section" style="display: none">
+          <div class="player-card">
+            <h3>Media Player</h3>
+            <div class="player-container">
+              <div id="mediaPlayer" class="media-player-wrapper">
+                <!-- Player will be inserted here dynamically -->
+              </div>
+              <div class="player-controls">
+                <button id="prevBtn" class="player-btn">⏮️ Previous</button>
+                <button id="playPauseBtn" class="player-btn">▶️ Play</button>
+                <button id="nextBtn" class="player-btn">⏭️ Next</button>
+              </div>
+              <div id="playlist" class="playlist">
+                <h4>Playlist</h4>
+                <div id="playlistItems" class="playlist-items"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Download Queue Section -->
+        <section id="queueSection" class="queue-section" style="display: none">
+          <div class="queue-card">
+            <h3>Active Downloads</h3>
+            <div id="downloadQueue" class="download-queue"></div>
+          </div>
         </section>
 
         <!-- Status Section -->

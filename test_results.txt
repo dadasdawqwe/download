@@ -1,0 +1,26 @@
+
+======================================================================
+COMPREHENSIVE FORMAT SELECTION TEST
+======================================================================
+
+Server: http://localhost:8000
+Downloads dir: /Users/rajatsable/Documents/web development/video downloader/downloads
+
+======================================================================
+AUDIO FORMAT SELECTION TESTS (YouTube Source)
+======================================================================
+
+📥 Testing AUDIO quality: excellent (320k expected)
+------------------------------------------------------------
+   Task ID: 554b2b73-af26-402a-a417-f31bc231927d
+   Downloading... Traceback (most recent call last):
+  File "/Users/rajatsable/Documents/web development/video downloader/comprehensive_test.py", line 237, in <module>
+    main()
+  File "/Users/rajatsable/Documents/web development/video downloader/comprehensive_test.py", line 227, in main
+    test_audio_formats()
+  File "/Users/rajatsable/Documents/web development/video downloader/comprehensive_test.py", line 112, in test_audio_formats
+    success, status = wait_for_download(task_id)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/rajatsable/Documents/web development/video downloader/comprehensive_test.py", line 81, in wait_for_download
+    time.sleep(2)
+KeyboardInterrupt
